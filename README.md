@@ -64,6 +64,15 @@ This repository features a unified **LiteLLM Proxy** setup that enables "impossi
    ./run_claude.sh kimi         # Runs Kimi K2.6
    ```
 
+## 🛠️ Using Custom Skills
+
+Claude Code can automatically discover and run scripts in the `skills/` directory. This project includes pre-built skills:
+
+- **Check Proxy Status**: Ask Claude *"Run the project_status skill"* to verify your proxy and API keys.
+- **List Available Models**: Ask Claude *"What models are available?"* to see all configured NVIDIA and Google models.
+
+To add your own, simply create a `.sh` script in the `skills/` folder and run `chmod +x skills/your_skill.sh`.
+
 ---
 
 ## 🧠 Why use this? (LinkedIn Highlight)
