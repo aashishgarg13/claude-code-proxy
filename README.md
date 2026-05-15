@@ -34,13 +34,28 @@ This repository features a unified **LiteLLM Proxy** setup that enables "impossi
    ```
 
 3. **Launch**:
-   ```bash
-   # Default (Qwen3-Next)
-   ./run_claude.sh
 
-   # Or specify your model
-   ./run_claude.sh gemini-pro
-   ./run_claude.sh deepseek
+   **🍎 macOS / 🐧 Linux**
+   Open your terminal, navigate to the repository folder, and run the script:
+   ```bash
+   cd /Users/aashishgarg/Downloads/Cluade
+   chmod +x run_claude.sh  # Make it executable (first time only)
+   ./run_claude.sh
+   ```
+
+   **🪟 Windows**
+   Use **Git Bash** (comes with Git for Windows) or **WSL** (Windows Subsystem for Linux) to run the bash script:
+   ```bash
+   cd /c/Users/aashishgarg/Downloads/Cluade  # Adjust for your drive if not C:
+   bash run_claude.sh
+   ```
+
+   **🎯 Switch Models Instantly**
+   Want to use a different model? Just pass the name as an argument:
+   ```bash
+   ./run_claude.sh gemini-pro   # Runs Google Gemini 3.1 Pro
+   ./run_claude.sh deepseek     # Runs DeepSeek V4 Pro
+   ./run_claude.sh kimi         # Runs Kimi K2.6
    ```
 
 ---
