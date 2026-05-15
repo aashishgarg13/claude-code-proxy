@@ -34,6 +34,9 @@ fi
 export ANTHROPIC_BASE_URL="http://127.0.0.1:4000"
 export ANTHROPIC_AUTH_TOKEN="dummy-token"
 
+# 🌟 PRO FEATURE: Enables the /model picker inside Claude Code
+export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY="1"
+
 # ---- STEP 5: Start a FRESH LiteLLM Proxy ----
 echo "Starting LiteLLM proxy with Google Gemini 1.5 Pro..."
 litellm --config litellm_config_google.yaml > litellm_proxy.log 2>&1 &
