@@ -88,6 +88,7 @@ model_list:
 
 litellm_settings:
   drop_params: true
+  set_verbose: true  # <--- Added this to show exactly which model is being used!
   num_retries: 5
   cooldown_time: 60
   retry_after: 5
