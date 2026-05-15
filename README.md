@@ -14,6 +14,7 @@ This repository features a unified **LiteLLM Proxy** setup that enables "impossi
   - `Kimi K2.6` (Long-horizon planning)
 - **🔄 Multi-Key Failover**: Have 2 keys? Use both! If Key 1 hits a rate limit, the proxy automatically switches to Key 2 and cools down Key 1. No more `429: Rate Limit Exceeded` interruptions.
 - **⚡ Unified Runner**: One script to rule them all. Switch models with a single argument.
+- **🛠️ Custom Claude Skills**: Pre-configured scripts in `skills/` that Claude can use to check project health and manage models.
 - **🔌 Zero Config for Claude**: Works natively with the official `@anthropic-ai/claude-code` CLI.
 
 ---
