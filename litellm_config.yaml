@@ -1,4 +1,27 @@
 model_list:
+  # --- AUTO MODE (Dynamic Work-Based Routing) ---
+  # Claude uses Sonnet for hard logic and Haiku for fast background tasks.
+  # This maps those automatically to the best equivalents!
+
+  # Heavy Tasks -> Gemini 3.1 Pro
+  - model_name: claude-3-5-sonnet-20241022
+    litellm_params:
+      model: gemini/gemini-3.1-pro-preview
+      api_key: os.environ/GEMINI_API_KEY_1
+  - model_name: claude-3-5-sonnet-20241022
+    litellm_params:
+      model: gemini/gemini-3.1-pro-preview
+      api_key: os.environ/GEMINI_API_KEY_2
+
+  # Fast/Background Tasks -> Gemini 3 Flash
+  - model_name: claude-3-5-haiku-20241022
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: os.environ/GEMINI_API_KEY_1
+  - model_name: claude-3-5-haiku-20241022
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: os.environ/GEMINI_API_KEY_2
   # --- NVIDIA NIM MODELS ---
   
   # Qwen3-Next (Latest Coding Model)

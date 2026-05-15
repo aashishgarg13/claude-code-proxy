@@ -27,8 +27,13 @@ export ANTHROPIC_BASE_URL="http://127.0.0.1:4000"
 export ANTHROPIC_AUTH_TOKEN="dummy-token"
 
 # ---- STEP 4: Start Proxy ----
-echo "Starting LiteLLM proxy with unified config..."
-litellm --config litellm_config.yaml --model $MODEL > litellm_proxy.log 2>&1 &
+if [ "$MODEL" = "auto" ]; then
+    echo "Starting LiteLLM proxy in AUTO mode (Dynamic Routing)..."
+    litellm --config litellm_config.yaml > litellm_proxy.log 2>&1 &
+else
+    echo "Starting LiteLLM proxy with $MODEL..."
+    litellm --config litellm_config.yaml --model $MODEL > litellm_proxy.log 2>&1 &
+fi
 LITELLM_PID=$!
 
 echo "Waiting for proxy to boot..."

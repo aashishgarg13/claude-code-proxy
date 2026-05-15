@@ -59,6 +59,7 @@ This repository features a unified **LiteLLM Proxy** setup that enables "impossi
    **🎯 Switch Models Instantly**
    Want to use a different model? Just pass the name as an argument:
    ```bash
+   ./run_claude.sh auto         # 🌟 DYNAMIC MODE: Routes heavy logic to Pro, fast tasks to Flash!
    ./run_claude.sh gemini-pro   # Runs Google Gemini 3.1 Pro
    ./run_claude.sh deepseek     # Runs DeepSeek V4 Pro
    ./run_claude.sh kimi         # Runs Kimi K2.6
