@@ -1,6 +1,6 @@
 # 🚀 Claude Code: Flagship Models + Multi-Key Failover
 
-Run Anthropic's **Claude Code** CLI using the world's best open-weights models (NVIDIA NIM) and Google Gemini — for **FREE** with automatic rate-limit handling.
+Run Anthropic's **Claude Code** CLI using the world's best open-weights models (NVIDIA NIM) — for **FREE** with automatic rate-limit handling.
 
 This repository features a unified **LiteLLM Proxy** setup that enables "impossible" coding workflows by rotating multiple API keys automatically when limits are hit.
 
@@ -11,7 +11,6 @@ This repository features a unified **LiteLLM Proxy** setup that enables "impossi
 - **🏆 Flagship Coder Support**: Out-of-the-box support for the latest models:
   - `Qwen3-Next` (Flagship coding performance)
   - `DeepSeek V4 Pro` (State-of-the-art reasoning)
-  - `Gemini 3.1 Pro` (Massive context & intelligence)
   - `Kimi K2.6` (Long-horizon planning)
 - **🔄 Multi-Key Failover**: Have 2 keys? Use both! If Key 1 hits a rate limit, the proxy automatically switches to Key 2 and cools down Key 1. No more `429: Rate Limit Exceeded` interruptions.
 - **⚡ Unified Runner**: One script to rule them all. Switch models with a single argument.
@@ -28,7 +27,7 @@ This repository features a unified **LiteLLM Proxy** setup that enables "impossi
    ```
 
 2. **Configure Keys**:
-   Copy `.env.example` to `.env` and add your keys (2 per provider for best results):
+   Copy `.env.example` to `.env` and add your NVIDIA API keys (2 keys for best results):
    ```bash
    cp .env.example .env
    ```
@@ -59,8 +58,7 @@ This repository features a unified **LiteLLM Proxy** setup that enables "impossi
    **🎯 Switch Models Instantly**
    Want to use a different model? Just pass the name as an argument:
    ```bash
-   ./run_claude.sh auto         # 🌟 DYNAMIC MODE: Routes heavy logic to Pro, fast tasks to Flash!
-   ./run_claude.sh gemini-pro   # Runs Google Gemini 3.1 Pro
+   ./run_claude.sh auto         # 🌟 DYNAMIC MODE: Routes heavy logic to DeepSeek, fast tasks to Qwen!
    ./run_claude.sh deepseek     # Runs DeepSeek V4 Pro
    ./run_claude.sh kimi         # Runs Kimi K2.6
    ```

@@ -2,7 +2,7 @@
 
 # Unified Claude Code Runner
 # Usage: ./run_claude.sh [model_name]
-# Example: ./run_claude.sh gemini-pro
+# Example: ./run_claude.sh deepseek
 # Default: qwen3
 
 MODEL=${1:-"qwen3"}

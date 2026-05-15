@@ -1,27 +1,28 @@
 model_list:
   # --- AUTO MODE (Dynamic Work-Based Routing) ---
   # Claude uses Sonnet for hard logic and Haiku for fast background tasks.
-  # This maps those automatically to the best equivalents!
+  # We map these to the best NVIDIA NIM equivalents.
 
-  # Heavy Tasks -> Gemini 3.1 Pro
+  # Heavy Tasks -> DeepSeek V4 Pro
   - model_name: claude-3-5-sonnet-20241022
     litellm_params:
-      model: gemini/gemini-3.1-pro-preview
-      api_key: os.environ/GEMINI_API_KEY_1
+      model: nvidia_nim/deepseek-ai/deepseek-v4-pro
+      api_key: os.environ/NVIDIA_API_KEY_1
   - model_name: claude-3-5-sonnet-20241022
     litellm_params:
-      model: gemini/gemini-3.1-pro-preview
-      api_key: os.environ/GEMINI_API_KEY_2
+      model: nvidia_nim/deepseek-ai/deepseek-v4-pro
+      api_key: os.environ/NVIDIA_API_KEY_2
 
-  # Fast/Background Tasks -> Gemini 3 Flash
+  # Fast/Background Tasks -> Qwen3-Next
   - model_name: claude-3-5-haiku-20241022
     litellm_params:
-      model: gemini/gemini-3-flash-preview
-      api_key: os.environ/GEMINI_API_KEY_1
+      model: nvidia_nim/qwen/qwen3-next-80b-a3b-instruct
+      api_key: os.environ/NVIDIA_API_KEY_1
   - model_name: claude-3-5-haiku-20241022
     litellm_params:
-      model: gemini/gemini-3-flash-preview
-      api_key: os.environ/GEMINI_API_KEY_2
+      model: nvidia_nim/qwen/qwen3-next-80b-a3b-instruct
+      api_key: os.environ/NVIDIA_API_KEY_2
+
   # --- NVIDIA NIM MODELS ---
   
   # Qwen3-Next (Latest Coding Model)
@@ -54,28 +55,6 @@ model_list:
       model: nvidia_nim/moonshotai/kimi-k2.6
       api_key: os.environ/NVIDIA_API_KEY_2
 
-  # --- GOOGLE GEMINI MODELS ---
-
-  # Gemini 3.1 Pro
-  - model_name: gemini-pro
-    litellm_params:
-      model: gemini/gemini-3.1-pro-preview
-      api_key: os.environ/GEMINI_API_KEY_1
-  - model_name: gemini-pro
-    litellm_params:
-      model: gemini/gemini-3.1-pro-preview
-      api_key: os.environ/GEMINI_API_KEY_2
-
-  # Gemini 3 Flash
-  - model_name: gemini-flash
-    litellm_params:
-      model: gemini/gemini-3-flash-preview
-      api_key: os.environ/GEMINI_API_KEY_1
-  - model_name: gemini-flash
-    litellm_params:
-      model: gemini/gemini-3-flash-preview
-      api_key: os.environ/GEMINI_API_KEY_2
-
   # Default Catch-all (routes to Qwen3 if no specific model requested)
   - model_name: "*"
     litellm_params:
@@ -88,7 +67,7 @@ model_list:
 
 litellm_settings:
   drop_params: true
-  set_verbose: true  # <--- Added this to show exactly which model is being used!
+  set_verbose: true
   num_retries: 5
   cooldown_time: 60
   retry_after: 5
