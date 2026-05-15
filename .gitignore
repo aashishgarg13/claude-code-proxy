@@ -1,0 +1,5 @@
+.env
+litellm_proxy.log
+__pycache__/
+*.pyc
+.DS_Store

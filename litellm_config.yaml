@@ -1,0 +1,76 @@
+model_list:
+  # --- NVIDIA NIM MODELS ---
+  
+  # Qwen3-Next (Latest Coding Model)
+  - model_name: qwen3
+    litellm_params:
+      model: nvidia_nim/qwen/qwen3-next-80b-a3b-instruct
+      api_key: os.environ/NVIDIA_API_KEY_1
+  - model_name: qwen3
+    litellm_params:
+      model: nvidia_nim/qwen/qwen3-next-80b-a3b-instruct
+      api_key: os.environ/NVIDIA_API_KEY_2
+
+  # DeepSeek V4 Pro
+  - model_name: deepseek
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-pro
+      api_key: os.environ/NVIDIA_API_KEY_1
+  - model_name: deepseek
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v4-pro
+      api_key: os.environ/NVIDIA_API_KEY_2
+
+  # Kimi K2.6
+  - model_name: kimi
+    litellm_params:
+      model: nvidia_nim/moonshotai/kimi-k2.6
+      api_key: os.environ/NVIDIA_API_KEY_1
+  - model_name: kimi
+    litellm_params:
+      model: nvidia_nim/moonshotai/kimi-k2.6
+      api_key: os.environ/NVIDIA_API_KEY_2
+
+  # --- GOOGLE GEMINI MODELS ---
+
+  # Gemini 3.1 Pro
+  - model_name: gemini-pro
+    litellm_params:
+      model: gemini/gemini-3.1-pro-preview
+      api_key: os.environ/GEMINI_API_KEY_1
+  - model_name: gemini-pro
+    litellm_params:
+      model: gemini/gemini-3.1-pro-preview
+      api_key: os.environ/GEMINI_API_KEY_2
+
+  # Gemini 3 Flash
+  - model_name: gemini-flash
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: os.environ/GEMINI_API_KEY_1
+  - model_name: gemini-flash
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: os.environ/GEMINI_API_KEY_2
+
+  # Default Catch-all (routes to Qwen3 if no specific model requested)
+  - model_name: "*"
+    litellm_params:
+      model: nvidia_nim/qwen/qwen3-next-80b-a3b-instruct
+      api_key: os.environ/NVIDIA_API_KEY_1
+  - model_name: "*"
+    litellm_params:
+      model: nvidia_nim/qwen/qwen3-next-80b-a3b-instruct
+      api_key: os.environ/NVIDIA_API_KEY_2
+
+litellm_settings:
+  drop_params: true
+  num_retries: 5
+  cooldown_time: 60
+  retry_after: 5
+
+router_settings:
+  routing_strategy: "usage-based-routing-v2"
+  cooldown_time: 60
+  num_retries: 5
+  retry_after: 5
