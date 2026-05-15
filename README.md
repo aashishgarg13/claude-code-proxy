@@ -50,6 +50,12 @@ This repository features a unified **LiteLLM Proxy** setup that enables "impossi
    bash run_claude.sh
    ```
 
+   **💻 VS Code (Recommended)**
+   If you are using VS Code, you can run Claude Code directly alongside your codebase:
+   1. Open the Integrated Terminal (`Ctrl + \`` or `Cmd + \`` on Mac).
+   2. Ensure you are in the project folder.
+   3. Run `./run_claude.sh` to start the proxy and the Claude interface inside VS Code.
+
    **🎯 Switch Models Instantly**
    Want to use a different model? Just pass the name as an argument:
    ```bash
